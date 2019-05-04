@@ -1,0 +1,698 @@
+******************************************************************************
+                  MSP430 Linker PC v4.2.1                      
+******************************************************************************
+>> Linked Mon Mar 04 15:12:48 2019
+
+OUTPUT FILE NAME:   <C01_W5500_UART_MSP430_CCSV5D.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00001c02
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000800  00000113  000006ed  RWIX
+  INFOB                 00001000   00000080  00000000  00000080  RWIX
+  INFOA                 00001080   00000080  00000000  00000080  RWIX
+  FLASH                 00001100   0000eee0  00000c0c  0000e2d4  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000002  00000000  RWIX
+  INT02                 0000ffe4   00000002  00000002  00000000  RWIX
+  INT03                 0000ffe6   00000002  00000002  00000000  RWIX
+  INT04                 0000ffe8   00000002  00000002  00000000  RWIX
+  INT05                 0000ffea   00000002  00000002  00000000  RWIX
+  INT06                 0000ffec   00000002  00000002  00000000  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000002  00000000  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000002  00000000  RWIX
+  INT11                 0000fff6   00000002  00000002  00000000  RWIX
+  INT12                 0000fff8   00000002  00000002  00000000  RWIX
+  INT13                 0000fffa   00000002  00000002  00000000  RWIX
+  INT14                 0000fffc   00000002  00000002  00000000  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    00001100    00000000     UNINITIALIZED
+
+.bss       0    00000200    000000c1     UNINITIALIZED
+                  00000200    00000050     (.common:Rx_Buffer)
+                  00000250    00000050     (.common:Tx_Buffer)
+                  000002a0    00000006     (.common:Phy_Addr)
+                  000002a6    00000004     (.common:Gateway_IP)
+                  000002aa    00000004     (.common:IP_Addr)
+                  000002ae    00000004     (.common:S0_DIP)
+                  000002b2    00000004     (.common:Sub_Mask)
+                  000002b6    00000004     (.common:UDP_DIPR)
+                  000002ba    00000002     (.common:S0_DPort)
+                  000002bc    00000002     (.common:S0_Port)
+                  000002be    00000002     (.common:UDP_DPORT)
+                  000002c0    00000001     (.common:S0_Data)
+
+.TI.noinit 
+*          0    00000200    00000000     UNINITIALIZED
+
+.data      0    000002c1    00000002     UNINITIALIZED
+                  000002c1    00000002     W5500.obj (.data)
+
+.TI.persistent 
+*          0    000002c1    00000000     UNINITIALIZED
+
+.stack     0    000009b0    00000050     UNINITIALIZED
+                  000009b0    00000002     rts430_eabi.lib : boot.obj (.stack)
+                  000009b2    0000004e     --HOLE--
+
+.text      0    00001100    00000bda     
+                  00001100    000000f2     W5500.obj (.text:Write_SOCK_Data_Buffer)
+                  000011f2    000000ee     W5500.obj (.text:Read_SOCK_Data_Buffer)
+                  000012e0    000000c8     W5500.obj (.text:Detect_Gateway)
+                  000013a8    0000008e     main.obj (.text:Load_Net_Parameters)
+                  00001436    0000008a     W5500.obj (.text:W5500_Init)
+                  000014c0    00000086     main.obj (.text:main)
+                  00001546    0000007a     W5500.obj (.text:W5500_Interrupt_Process)
+                  000015c0    00000076     W5500.obj (.text:Socket_Listen)
+                  00001636    0000005e     rts430_eabi.lib : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  00001694    0000005e                     : autoinit.obj (.text:_auto_init)
+                  000016f2    00000056     W5500.obj (.text:Socket_Init)
+                  00001748    00000056     main.obj (.text:W5500_Socket_Set)
+                  0000179e    0000004e     W5500.obj (.text:Socket_Connect)
+                  000017ec    00000048     W5500.obj (.text:SPI_Send_Byte)
+                  00001834    00000046     W5500.obj (.text:Write_W5500_SOCK_4Byte)
+                  0000187a    00000044     W5500.obj (.text:Socket_UDP)
+                  000018be    0000003c     W5500.obj (.text:Read_W5500_SOCK_2Byte)
+                  000018fa    00000038     W5500.obj (.text:io_low)
+                  00001932    00000038     W5500.obj (.text:io_set)
+                  0000196a    00000036     W5500.obj (.text:Write_W5500_nByte)
+                  000019a0    00000034     W5500.obj (.text:SPI_Read_Byte)
+                  000019d4    00000034     W5500.obj (.text:Write_W5500_SOCK_1Byte)
+                  00001a08    00000034     W5500.obj (.text:Write_W5500_SOCK_2Byte)
+                  00001a3c    00000030     W5500.obj (.text:Read_W5500_SOCK_1Byte)
+                  00001a6c    00000030     rs232.obj (.text:uart_0_init)
+                  00001a9c    0000002e     main.obj (.text:Process_Socket_Data)
+                  00001aca    0000002c     rts430_eabi.lib : lsl16.obj (.text)
+                  00001af6    0000002c     spi.obj (.text:spi_gpio_init)
+                  00001b22    0000002a     W5500.obj (.text:W5500_Hardware_Reset)
+                  00001b4c    0000002a     W5500.obj (.text:Write_W5500_1Byte)
+                  00001b76    0000002a     W5500.obj (.text:Write_W5500_2Byte)
+                  00001ba0    00000024     W5500.obj (.text:Read_W5500_1Byte)
+                  00001bc4    00000020     main.obj (.text:system_clk_init)
+                  00001be4    0000001e     main.obj (.text:Delay)
+                  00001c02    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
+                  00001c1c    00000016     rs232.obj (.text:uart_0_send_str)
+                  00001c32    00000014     W5500.obj (.text:SPI_Send_Short)
+                  00001c46    00000014     rts430_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  00001c5a    00000014     W5500.obj (.text:io_read)
+                  00001c6e    00000014     rs232.obj (.text:uart_gpio_init)
+                  00001c82    00000012     rts430_eabi.lib : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  00001c94    00000012                     : memcpy.obj (.text:memcpy)
+                  00001ca6    00000010     main.obj (.text:W5500_Initialization)
+                  00001cb6    00000010     rts430_eabi.lib : epilog.obj (.text)
+                  00001cc6    00000006                     : isr_trap.obj (.text:__TI_ISR_TRAP)
+                  00001ccc    00000006                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+                  00001cd2    00000004                     : pre_init.obj (.text:_system_pre_init)
+                  00001cd6    00000004                     : exit.obj (.text:abort)
+
+.const     0    00001cda    0000001a     
+                  00001cda    0000001a     main.obj (.const:.string)
+
+.cinit     0    00001cf4    00000018     
+                  00001cf4    00000006     (.cinit..data.load) [load image]
+                  00001cfa    00000006     (__TI_handler_table)
+                  00001d00    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  00001d04    00000008     (__TI_cinit_table)
+
+PORT2      0    0000ffe2    00000002     
+                  0000ffe2    00000002     rts430_eabi.lib : int01.obj (.int01)
+
+USART1TX   0    0000ffe4    00000002     
+                  0000ffe4    00000002     rts430_eabi.lib : int02.obj (.int02)
+
+USART1RX   0    0000ffe6    00000002     
+                  0000ffe6    00000002     rts430_eabi.lib : int03.obj (.int03)
+
+PORT1      0    0000ffe8    00000002     
+                  0000ffe8    00000002     rts430_eabi.lib : int04.obj (.int04)
+
+TIMERA1    0    0000ffea    00000002     
+                  0000ffea    00000002     rts430_eabi.lib : int05.obj (.int05)
+
+TIMERA0    0    0000ffec    00000002     
+                  0000ffec    00000002     rts430_eabi.lib : int06.obj (.int06)
+
+ADC12      0    0000ffee    00000002     
+                  0000ffee    00000002     rts430_eabi.lib : int07.obj (.int07)
+
+USART0TX   0    0000fff0    00000002     
+                  0000fff0    00000002     rts430_eabi.lib : int08.obj (.int08)
+
+USART0RX   0    0000fff2    00000002     
+                  0000fff2    00000002     rts430_eabi.lib : int09.obj (.int09)
+
+WDT        0    0000fff4    00000002     
+                  0000fff4    00000002     rts430_eabi.lib : int10.obj (.int10)
+
+COMPARATORA 
+*          0    0000fff6    00000002     
+                  0000fff6    00000002     rts430_eabi.lib : int11.obj (.int11)
+
+TIMERB1    0    0000fff8    00000002     
+                  0000fff8    00000002     rts430_eabi.lib : int12.obj (.int12)
+
+TIMERB0    0    0000fffa    00000002     
+                  0000fffa    00000002     rts430_eabi.lib : int13.obj (.int13)
+
+NMI        0    0000fffc    00000002     
+                  0000fffc    00000002     rts430_eabi.lib : int14.obj (.int14)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00001d04 records: 2, size/record: 4, table size: 8
+	.data: load addr=00001cf4, load size=00000006 bytes, run addr=000002c1, run size=00000002 bytes, compression=copy
+	.bss: load addr=00001d00, load size=00000004 bytes, run addr=00000200, run size=000000c1 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00001cfa records: 3, size/record: 2, table size: 6
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_rle24
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+000001a0   ADC12CTL0
+000001a2   ADC12CTL1
+000001a6   ADC12IE
+000001a4   ADC12IFG
+000001a8   ADC12IV
+00000080   ADC12MCTL0
+00000081   ADC12MCTL1
+0000008a   ADC12MCTL10
+0000008b   ADC12MCTL11
+0000008c   ADC12MCTL12
+0000008d   ADC12MCTL13
+0000008e   ADC12MCTL14
+0000008f   ADC12MCTL15
+00000082   ADC12MCTL2
+00000083   ADC12MCTL3
+00000084   ADC12MCTL4
+00000085   ADC12MCTL5
+00000086   ADC12MCTL6
+00000087   ADC12MCTL7
+00000088   ADC12MCTL8
+00000089   ADC12MCTL9
+00000140   ADC12MEM0
+00000142   ADC12MEM1
+00000154   ADC12MEM10
+00000156   ADC12MEM11
+00000158   ADC12MEM12
+0000015a   ADC12MEM13
+0000015c   ADC12MEM14
+0000015e   ADC12MEM15
+00000144   ADC12MEM2
+00000146   ADC12MEM3
+00000148   ADC12MEM4
+0000014a   ADC12MEM5
+0000014c   ADC12MEM6
+0000014e   ADC12MEM7
+00000150   ADC12MEM8
+00000152   ADC12MEM9
+00000057   BCSCTL1
+00000058   BCSCTL2
+00001cd6   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+00000056   DCOCTL
+00001be4   Delay
+000012e0   Detect_Gateway
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+000002a6   Gateway_IP
+00000000   IE1
+00000001   IE2
+00000002   IFG1
+00000003   IFG2
+000002aa   IP_Addr
+000013a8   Load_Net_Parameters
+00000134   MAC
+00000136   MACS
+00000004   ME1
+00000005   ME2
+00000130   MPY
+00000132   MPYS
+00000138   OP2
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000026   P1SEL
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002e   P2SEL
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+0000001b   P3SEL
+0000001e   P4DIR
+0000001c   P4IN
+0000001d   P4OUT
+0000001f   P4SEL
+00000032   P5DIR
+00000030   P5IN
+00000031   P5OUT
+00000033   P5SEL
+00000036   P6DIR
+00000034   P6IN
+00000035   P6OUT
+00000037   P6SEL
+000002a0   Phy_Addr
+00001a9c   Process_Socket_Data
+0000013c   RESHI
+0000013a   RESLO
+000011f2   Read_SOCK_Data_Buffer
+00001ba0   Read_W5500_1Byte
+00001a3c   Read_W5500_SOCK_1Byte
+000018be   Read_W5500_SOCK_2Byte
+00000200   Rx_Buffer
+000002ae   S0_DIP
+000002ba   S0_DPort
+000002c0   S0_Data
+000002c1   S0_Mode
+000002bc   S0_Port
+000002c2   S0_State
+000019a0   SPI_Read_Byte
+000017ec   SPI_Send_Byte
+00001c32   SPI_Send_Short
+0000013e   SUMEXT
+0000179e   Socket_Connect
+000016f2   Socket_Init
+000015c0   Socket_Listen
+0000187a   Socket_UDP
+000002b2   Sub_Mask
+00000172   TACCR0
+00000174   TACCR1
+00000176   TACCR2
+00000162   TACCTL0
+00000164   TACCTL1
+00000166   TACCTL2
+00000160   TACTL
+0000012e   TAIV
+00000170   TAR
+00000192   TBCCR0
+00000194   TBCCR1
+00000196   TBCCR2
+00000198   TBCCR3
+0000019a   TBCCR4
+0000019c   TBCCR5
+0000019e   TBCCR6
+00000182   TBCCTL0
+00000184   TBCCTL1
+00000186   TBCCTL2
+00000188   TBCCTL3
+0000018a   TBCCTL4
+0000018c   TBCCTL5
+0000018e   TBCCTL6
+00000180   TBCTL
+0000011e   TBIV
+00000190   TBR
+00000250   Tx_Buffer
+00000074   U0BR0
+00000075   U0BR1
+00000070   U0CTL
+00000073   U0MCTL
+00000072   U0RCTL
+00000076   U0RXBUF
+00000071   U0TCTL
+00000077   U0TXBUF
+0000007c   U1BR0
+0000007d   U1BR1
+00000078   U1CTL
+0000007b   U1MCTL
+0000007a   U1RCTL
+0000007e   U1RXBUF
+00000079   U1TCTL
+0000007f   U1TXBUF
+000002b6   UDP_DIPR
+000002be   UDP_DPORT
+00001b22   W5500_Hardware_Reset
+00001436   W5500_Init
+00001ca6   W5500_Initialization
+00001546   W5500_Interrupt_Process
+00001748   W5500_Socket_Set
+00000120   WDTCTL
+00001100   Write_SOCK_Data_Buffer
+00001b4c   Write_W5500_1Byte
+00001b76   Write_W5500_2Byte
+000019d4   Write_W5500_SOCK_1Byte
+00001a08   Write_W5500_SOCK_2Byte
+00001834   Write_W5500_SOCK_4Byte
+0000196a   Write_W5500_nByte
+00000a00   __STACK_END
+00000050   __STACK_SIZE
+00001d04   __TI_CINIT_Base
+00001d0c   __TI_CINIT_Limit
+00001cfa   __TI_Handler_Table_Base
+00001d00   __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+00001cc6   __TI_ISR_TRAP
+00000001   __TI_args_main
+00001c82   __TI_decompress_none
+00001ccc   __TI_decompress_rle24
+00000001   __TI_exit
+0000ffe2   __TI_int01
+0000ffe4   __TI_int02
+0000ffe6   __TI_int03
+0000ffe8   __TI_int04
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000fff2   __TI_int09
+0000fff4   __TI_int10
+0000fff6   __TI_int11
+0000fff8   __TI_int12
+0000fffa   __TI_int13
+0000fffc   __TI_int14
+00001c46   __TI_zero_init
+ffffffff   __binit__
+ffffffff   __c_args__
+00001cc2   __mspabi_func_epilog_1
+00001cc0   __mspabi_func_epilog_2
+00001cbe   __mspabi_func_epilog_3
+00001cbc   __mspabi_func_epilog_4
+00001cba   __mspabi_func_epilog_5
+00001cb8   __mspabi_func_epilog_6
+00001cb6   __mspabi_func_epilog_7
+00001aca   __mspabi_slli
+00001af2   __mspabi_slli_1
+00001ae0   __mspabi_slli_10
+00001ade   __mspabi_slli_11
+00001adc   __mspabi_slli_12
+00001ada   __mspabi_slli_13
+00001ad8   __mspabi_slli_14
+00001ad6   __mspabi_slli_15
+00001af0   __mspabi_slli_2
+00001aee   __mspabi_slli_3
+00001aec   __mspabi_slli_4
+00001aea   __mspabi_slli_5
+00001ae8   __mspabi_slli_6
+00001ae6   __mspabi_slli_7
+00001ae4   __mspabi_slli_8
+00001ae2   __mspabi_slli_9
+00001694   _auto_init
+00001c02   _c_int00
+00001c02   _c_int00_noexit
+0000fffe   _reset_vector
+000009b0   _stack
+00001cd2   _system_pre_init
+00001cd6   abort
+ffffffff   binit
+000018fa   io_low
+00001c5a   io_read
+00001932   io_set
+000014c0   main
+00001c94   memcpy
+00001af6   spi_gpio_init
+00001bc4   system_clk_init
+00001a6c   uart_0_init
+00001c1c   uart_0_send_str
+00001c6e   uart_gpio_init
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000004   ME1
+00000005   ME2
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+0000001c   P4IN
+0000001d   P4OUT
+0000001e   P4DIR
+0000001f   P4SEL
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+00000030   P5IN
+00000031   P5OUT
+00000032   P5DIR
+00000033   P5SEL
+00000034   P6IN
+00000035   P6OUT
+00000036   P6DIR
+00000037   P6SEL
+00000050   __STACK_SIZE
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+00000070   U0CTL
+00000071   U0TCTL
+00000072   U0RCTL
+00000073   U0MCTL
+00000074   U0BR0
+00000075   U0BR1
+00000076   U0RXBUF
+00000077   U0TXBUF
+00000078   U1CTL
+00000079   U1TCTL
+0000007a   U1RCTL
+0000007b   U1MCTL
+0000007c   U1BR0
+0000007d   U1BR1
+0000007e   U1RXBUF
+0000007f   U1TXBUF
+00000080   ADC12MCTL0
+00000081   ADC12MCTL1
+00000082   ADC12MCTL2
+00000083   ADC12MCTL3
+00000084   ADC12MCTL4
+00000085   ADC12MCTL5
+00000086   ADC12MCTL6
+00000087   ADC12MCTL7
+00000088   ADC12MCTL8
+00000089   ADC12MCTL9
+0000008a   ADC12MCTL10
+0000008b   ADC12MCTL11
+0000008c   ADC12MCTL12
+0000008d   ADC12MCTL13
+0000008e   ADC12MCTL14
+0000008f   ADC12MCTL15
+0000011e   TBIV
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TAIV
+00000130   MPY
+00000132   MPYS
+00000134   MAC
+00000136   MACS
+00000138   OP2
+0000013a   RESLO
+0000013c   RESHI
+0000013e   SUMEXT
+00000140   ADC12MEM0
+00000142   ADC12MEM1
+00000144   ADC12MEM2
+00000146   ADC12MEM3
+00000148   ADC12MEM4
+0000014a   ADC12MEM5
+0000014c   ADC12MEM6
+0000014e   ADC12MEM7
+00000150   ADC12MEM8
+00000152   ADC12MEM9
+00000154   ADC12MEM10
+00000156   ADC12MEM11
+00000158   ADC12MEM12
+0000015a   ADC12MEM13
+0000015c   ADC12MEM14
+0000015e   ADC12MEM15
+00000160   TACTL
+00000162   TACCTL0
+00000164   TACCTL1
+00000166   TACCTL2
+00000170   TAR
+00000172   TACCR0
+00000174   TACCR1
+00000176   TACCR2
+00000180   TBCTL
+00000182   TBCCTL0
+00000184   TBCCTL1
+00000186   TBCCTL2
+00000188   TBCCTL3
+0000018a   TBCCTL4
+0000018c   TBCCTL5
+0000018e   TBCCTL6
+00000190   TBR
+00000192   TBCCR0
+00000194   TBCCR1
+00000196   TBCCR2
+00000198   TBCCR3
+0000019a   TBCCR4
+0000019c   TBCCR5
+0000019e   TBCCR6
+000001a0   ADC12CTL0
+000001a2   ADC12CTL1
+000001a4   ADC12IFG
+000001a6   ADC12IE
+000001a8   ADC12IV
+00000200   Rx_Buffer
+00000250   Tx_Buffer
+000002a0   Phy_Addr
+000002a6   Gateway_IP
+000002aa   IP_Addr
+000002ae   S0_DIP
+000002b2   Sub_Mask
+000002b6   UDP_DIPR
+000002ba   S0_DPort
+000002bc   S0_Port
+000002be   UDP_DPORT
+000002c0   S0_Data
+000002c1   S0_Mode
+000002c2   S0_State
+000009b0   _stack
+00000a00   __STACK_END
+00001100   Write_SOCK_Data_Buffer
+000011f2   Read_SOCK_Data_Buffer
+000012e0   Detect_Gateway
+000013a8   Load_Net_Parameters
+00001436   W5500_Init
+000014c0   main
+00001546   W5500_Interrupt_Process
+000015c0   Socket_Listen
+00001694   _auto_init
+000016f2   Socket_Init
+00001748   W5500_Socket_Set
+0000179e   Socket_Connect
+000017ec   SPI_Send_Byte
+00001834   Write_W5500_SOCK_4Byte
+0000187a   Socket_UDP
+000018be   Read_W5500_SOCK_2Byte
+000018fa   io_low
+00001932   io_set
+0000196a   Write_W5500_nByte
+000019a0   SPI_Read_Byte
+000019d4   Write_W5500_SOCK_1Byte
+00001a08   Write_W5500_SOCK_2Byte
+00001a3c   Read_W5500_SOCK_1Byte
+00001a6c   uart_0_init
+00001a9c   Process_Socket_Data
+00001aca   __mspabi_slli
+00001ad6   __mspabi_slli_15
+00001ad8   __mspabi_slli_14
+00001ada   __mspabi_slli_13
+00001adc   __mspabi_slli_12
+00001ade   __mspabi_slli_11
+00001ae0   __mspabi_slli_10
+00001ae2   __mspabi_slli_9
+00001ae4   __mspabi_slli_8
+00001ae6   __mspabi_slli_7
+00001ae8   __mspabi_slli_6
+00001aea   __mspabi_slli_5
+00001aec   __mspabi_slli_4
+00001aee   __mspabi_slli_3
+00001af0   __mspabi_slli_2
+00001af2   __mspabi_slli_1
+00001af6   spi_gpio_init
+00001b22   W5500_Hardware_Reset
+00001b4c   Write_W5500_1Byte
+00001b76   Write_W5500_2Byte
+00001ba0   Read_W5500_1Byte
+00001bc4   system_clk_init
+00001be4   Delay
+00001c02   _c_int00
+00001c02   _c_int00_noexit
+00001c1c   uart_0_send_str
+00001c32   SPI_Send_Short
+00001c46   __TI_zero_init
+00001c5a   io_read
+00001c6e   uart_gpio_init
+00001c82   __TI_decompress_none
+00001c94   memcpy
+00001ca6   W5500_Initialization
+00001cb6   __mspabi_func_epilog_7
+00001cb8   __mspabi_func_epilog_6
+00001cba   __mspabi_func_epilog_5
+00001cbc   __mspabi_func_epilog_4
+00001cbe   __mspabi_func_epilog_3
+00001cc0   __mspabi_func_epilog_2
+00001cc2   __mspabi_func_epilog_1
+00001cc6   __TI_ISR_TRAP
+00001ccc   __TI_decompress_rle24
+00001cd2   _system_pre_init
+00001cd6   C$$EXIT
+00001cd6   abort
+00001cfa   __TI_Handler_Table_Base
+00001d00   __TI_Handler_Table_Limit
+00001d04   __TI_CINIT_Base
+00001d0c   __TI_CINIT_Limit
+0000ffe2   __TI_int01
+0000ffe4   __TI_int02
+0000ffe6   __TI_int03
+0000ffe8   __TI_int04
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000fff2   __TI_int09
+0000fff4   __TI_int10
+0000fff6   __TI_int11
+0000fff8   __TI_int12
+0000fffa   __TI_int13
+0000fffc   __TI_int14
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+
+[246 symbols]

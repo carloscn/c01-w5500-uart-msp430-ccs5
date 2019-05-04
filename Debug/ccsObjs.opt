@@ -1,0 +1,1 @@
+"./src/spi.obj" "./src/rs232.obj" "./src/main.obj" "./src/W5500.obj" "../lnk_msp430f149.cmd" -l"libc.a" 
